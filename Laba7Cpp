@@ -1,0 +1,61 @@
+		/*---Варіант 28---*/
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+
+using namespace std;
+
+void input_mass(int*, int);		/*Прототип функції ініціалізації масиву*/
+void output_mass(int*, int);		/*Прототип функції виведення масиву*/
+int most_popular(int*, int);		/*Прототип функції знаходження найменшого найпопулярнішого елемента*/
+
+/*============Головна функція============*/
+int main() {
+	const int n = 10;
+	int B[n], m_pop;
+	input_mass(B, n);				/*Виклик функції ініціалізації масиву*/
+	output_mass(B, n);				/*Виклик функції виведення масиву*/
+	m_pop = most_popular(B, n);	/*Виклик функції знаходження найменшого найпопулярнішого елемента*/
+	cout << "The most popular number is " << m_pop;
+}
+
+/*============Функція ініціалізації масиву============*/
+void input_mass(int* arr, int size) {
+	srand(time(0));
+	for (int i = 0; i < size; i++)
+		arr[i] = rand() % 21 - 10;
+	return;
+}
+
+/*============Функція виведення масиву============*/
+void output_mass(int* arr, int size) {
+	for (int i = 0; i < size; i++)
+		cout << i + 1 << ") \t" << fixed << setw(3) << arr[i] << endl;
+	return;
+}
+
+/*===Функція знаходження найменшого найпопулярнішого елемента===*/
+int most_popular(int* arr, int size) {
+	int number = arr[0], NUM = 0, x, num;
+	for (int i = 0; i < size; i++) {
+		x = arr[i];
+		num = 1;
+		for (int j = i + 1 ; j < size; j++) {
+			if (x == arr[j]) {
+				num++;
+			}
+		}
+		if (num > NUM) {
+			NUM = num;
+			number = x;
+		}
+		else {
+			 if (num == NUM) {
+				if (x < number) {
+					number = x;
+				}
+			 }
+		}
+	}
+	return number;
+}
