@@ -5,33 +5,33 @@ using namespace std;
 const int n = 3;
 float first_mass[n][n], second_mass[n][n];
 
-void input_mass(float arr[n][n]);							//Прототип функції ініціалізації масиву
-void output_mass(float arr[n][n]);							//Прототип функції виведення масиву
-void sort(float arr[n][n]);									//Прототип функції сортування діагоналі масиву
-void exchange(float aarr_one[n][n], float arr_two[n][n]);		//Прототип функції переставлення діагоналей масивів
+void input_mass(float arr[n][n]);							//РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†С–С— С–РЅС–С†С–Р°Р»С–Р·Р°С†С–С— РјР°СЃРёРІСѓ
+void output_mass(float arr[n][n]);							//РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†С–С— РІРёРІРµРґРµРЅРЅСЏ РјР°СЃРёРІСѓ
+void sort(float arr[n][n]);									//РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†С–С— СЃРѕСЂС‚СѓРІР°РЅРЅСЏ РґС–Р°РіРѕРЅР°Р»С– РјР°СЃРёРІСѓ
+void exchange(float aarr_one[n][n], float arr_two[n][n]);		//РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†С–С— РїРµСЂРµСЃС‚Р°РІР»РµРЅРЅСЏ РґС–Р°РіРѕРЅР°Р»РµР№ РјР°СЃРёРІС–РІ
 
-/*============= Головна функція =============*/
+/*============= Р“РѕР»РѕРІРЅР° С„СѓРЅРєС†С–СЏ =============*/
 int main() {
-	input_mass(first_mass);						//Ініціалізація першого масиву
-	input_mass(second_mass);					//Ініціалізація другого масиву
+	input_mass(first_mass);						//Р†РЅС–С†С–Р°Р»С–Р·Р°С†С–СЏ РїРµСЂС€РѕРіРѕ РјР°СЃРёРІСѓ
+	input_mass(second_mass);					//Р†РЅС–С†С–Р°Р»С–Р·Р°С†С–СЏ РґСЂСѓРіРѕРіРѕ РјР°СЃРёРІСѓ
 	cout << "First masiwe:" << endl;
-	output_mass(first_mass);					//Виведення першого масиву
+	output_mass(first_mass);					//Р’РёРІРµРґРµРЅРЅСЏ РїРµСЂС€РѕРіРѕ РјР°СЃРёРІСѓ
 	cout << "Second masiwe:" << endl;
-	output_mass(second_mass);					//Виведення другого масиву
-	sort(first_mass);							//Сортування головної діагоналі першого масиву
-	sort(second_mass);							//Сортування головної діагоналі другого масиву
+	output_mass(second_mass);					//Р’РёРІРµРґРµРЅРЅСЏ РґСЂСѓРіРѕРіРѕ РјР°СЃРёРІСѓ
+	sort(first_mass);							//РЎРѕСЂС‚СѓРІР°РЅРЅСЏ РіРѕР»РѕРІРЅРѕС— РґС–Р°РіРѕРЅР°Р»С– РїРµСЂС€РѕРіРѕ РјР°СЃРёРІСѓ
+	sort(second_mass);							//РЎРѕСЂС‚СѓРІР°РЅРЅСЏ РіРѕР»РѕРІРЅРѕС— РґС–Р°РіРѕРЅР°Р»С– РґСЂСѓРіРѕРіРѕ РјР°СЃРёРІСѓ
 	cout << "Sorted first masiwe:" << endl;
-	output_mass(first_mass);					//Виведення першого масиву
+	output_mass(first_mass);					//Р’РёРІРµРґРµРЅРЅСЏ РїРµСЂС€РѕРіРѕ РјР°СЃРёРІСѓ
 	cout << "Sorted second masiwe:" << endl;
-	output_mass(second_mass);					//Виведення другого масиву
-	exchange(first_mass, second_mass);			//Переставлення діагоналей масивів
+	output_mass(second_mass);					//Р’РёРІРµРґРµРЅРЅСЏ РґСЂСѓРіРѕРіРѕ РјР°СЃРёРІСѓ
+	exchange(first_mass, second_mass);			//РџРµСЂРµСЃС‚Р°РІР»РµРЅРЅСЏ РґС–Р°РіРѕРЅР°Р»РµР№ РјР°СЃРёРІС–РІ
 	cout << "Terminal first masiwe:" << endl;
-	output_mass(first_mass);					//Виведення першого масиву
+	output_mass(first_mass);					//Р’РёРІРµРґРµРЅРЅСЏ РїРµСЂС€РѕРіРѕ РјР°СЃРёРІСѓ
 	cout << "Terminal second masiwe:" << endl;
-	output_mass(second_mass);					//Виведення другого масиву
+	output_mass(second_mass);					//Р’РёРІРµРґРµРЅРЅСЏ РґСЂСѓРіРѕРіРѕ РјР°СЃРёРІСѓ
 }
 
-/*========== Функція ініціалізації масиву ==========*/
+/*========== Р¤СѓРЅРєС†С–СЏ С–РЅС–С†С–Р°Р»С–Р·Р°С†С–С— РјР°СЃРёРІСѓ ==========*/
 void input_mass(float arr[n][n]) {
 	float t;
 	cout << "Enter a random number: "; cin >> t;
@@ -43,7 +43,7 @@ void input_mass(float arr[n][n]) {
 	}
 }
 
-/*============ Функція виведення масиву ============*/
+/*============ Р¤СѓРЅРєС†С–СЏ РІРёРІРµРґРµРЅРЅСЏ РјР°СЃРёРІСѓ ============*/
 void output_mass(float arr[n][n]) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
@@ -53,7 +53,7 @@ void output_mass(float arr[n][n]) {
 	}
 }
 
-/*======= Функція сортування діагоналі масиву =======*/
+/*======= Р¤СѓРЅРєС†С–СЏ СЃРѕСЂС‚СѓРІР°РЅРЅСЏ РґС–Р°РіРѕРЅР°Р»С– РјР°СЃРёРІСѓ =======*/
 void sort(float arr[n][n]) {
 	float temp;
 	for (int i = 0; i < n - 1; i++) {
@@ -67,7 +67,7 @@ void sort(float arr[n][n]) {
 	}
 }
 
-/*============= Функція переставлення діагоналей масивів =============*/
+/*============= Р¤СѓРЅРєС†С–СЏ РїРµСЂРµСЃС‚Р°РІР»РµРЅРЅСЏ РґС–Р°РіРѕРЅР°Р»РµР№ РјР°СЃРёРІС–РІ =============*/
 void exchange(float arr_one[n][n], float arr_two[n][n]) {
 	float temp;
 	for (int i = 0; i < n; i++) {
